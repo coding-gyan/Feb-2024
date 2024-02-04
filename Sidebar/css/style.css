@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #191919;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #191919;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.33);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    display: flex;
+    margin: 5px 0;
+}
+
+.sidebar ul li i {
+    width: 25px;
+    z-index: 1;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    padding: 10px;
+}
+
+.sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    border-radius: 5px;
+    opacity: 0.05;
+    transform: scaleX(0.4);
+    transform-origin: left;
+    transition: all .4s;
+}
+
+.sidebar ul li a:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.sidebar ul li a span {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: all .4s;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar ul li a:hover span {
+    transform: translateX(0px);
+    opacity: 1;
+    width: 100%;
+}
